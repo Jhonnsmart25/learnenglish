@@ -117,7 +117,9 @@ const page = (title, body) => `<!doctype html><html lang="es"><head>
 <title>${title}</title>
 <style>body{font-family:system-ui,sans-serif;text-align:center;padding:15vh 24px;color:#222}h1{margin-bottom:8px}</style>
 </head><body><h1>${title}</h1><p>${body}</p></body></html>`;
-
+app.get('/', (_req, res) =>
+  res.send(page('Backend Activo 🚀', 'El servidor de pagos para tu app está funcionando correctamente.'))
+);
 app.get('/success', (_req, res) =>
   res.send(
     page(
